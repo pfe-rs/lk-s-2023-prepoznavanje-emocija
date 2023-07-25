@@ -50,6 +50,14 @@ def biraj_bazu() -> FileChooser:
     return fc
 
 
+def biraj_fajl() -> FileChooser:
+    # biranje fajla
+    fc = FileChooser()
+
+    display(fc)
+    return fc
+
+
 class primerak():
     def __init__(self, data: np.ndarray, emoci: str, file: str, path: str , sr: int, gr: str, recenica: str):
         self.data = data # niz u kojem je signal, raw
