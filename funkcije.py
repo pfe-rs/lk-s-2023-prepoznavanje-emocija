@@ -30,7 +30,21 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
 
+from sklearn.neighbors import KNeighborsRegressor
+
+from sklearn.metrics import mean_squared_error
+from math import sqrt
+
+from sklearn.metrics import accuracy_score
+
+
 ##
+
+sns.set() ## fensi plotovi otprilike
+#plt.xkcd() ## e ovo su real fancy plotovi vec
+
+pd.set_option("display.max.columns", None)
+
 
 def biraj_bazu() -> FileChooser:
     # biranje foldera
