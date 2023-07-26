@@ -38,6 +38,9 @@ from math import sqrt
 from sklearn.metrics import accuracy_score
 
 import sklearn.metrics as metrics
+import sklearn
+
+# from sklearn import svm
 ##
 
 sns.set() ## fensi plotovi otprilike
