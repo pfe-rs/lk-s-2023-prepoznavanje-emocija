@@ -37,7 +37,7 @@ from math import sqrt
 
 from sklearn.metrics import accuracy_score
 
-
+import sklearn.metrics as metrics
 ##
 
 sns.set() ## fensi plotovi otprilike
