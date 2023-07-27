@@ -43,6 +43,8 @@ from sklearn.pipeline import make_pipeline
 
 from sklearn.ensemble import RandomForestClassifier
 
+from sklearn.model_selection import cross_val_score
+
 import pickle
 import time
 
@@ -50,7 +52,7 @@ from datetime import datetime
 
 import mlflow
 mlflow.autolog()
-
+mlflow.set_tracking_uri("sqlite:///mlflow.db") 
 
 
 # from sklearn import svm
