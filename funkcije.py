@@ -48,6 +48,9 @@ import time
 
 from datetime import datetime
 
+import mlflow
+mlflow.autolog()
+
 
 
 # from sklearn import svm
