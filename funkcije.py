@@ -90,7 +90,7 @@ def get_metrics(y_true, y_pred):
         'f1': f1_score(y_true, y_pred, average='macro'),
         'precision': precision_score(y_true, y_pred, average='macro'),
         'recall': recall_score(y_true, y_pred, average='macro'),
-        'confusion_matrix': [y_true,y_pred]
+        # 'confusion_matrix ': [y_true,y_pred]
 
     }
 
