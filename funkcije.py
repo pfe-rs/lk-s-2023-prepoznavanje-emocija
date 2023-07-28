@@ -44,6 +44,19 @@ from sklearn.pipeline import make_pipeline
 from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.model_selection import cross_val_score
+from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import classification_report
+
+
+from sklearn.metrics import classification_report
+from sklearn.metrics import f1_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from pycm import ConfusionMatrix
+
+
+from sklearn import svm
+
 
 import pickle
 import time
@@ -52,7 +65,8 @@ from datetime import datetime
 
 import mlflow
 mlflow.autolog()
-mlflow.set_tracking_uri("sqlite:///mlflow.db") 
+# mlflow.set_tracking_uri("sqlite:///mlflow.db") 
+from mlflow import log_metric, log_param, log_params, log_artifacts
 
 
 # from sklearn import svm
@@ -62,6 +76,26 @@ sns.set() ## fensi plotovi otprilike
 #plt.xkcd() ## e ovo su real fancy plotovi vec
 
 pd.set_option("display.max.columns", None)
+
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams['savefig.dpi'] = 300
+
+
+def get_metrics(y_true, y_pred):
+    """
+    Returns metrics for classification
+    """
+    return {
+        'accuracy': accuracy_score(y_true, y_pred),
+        'f1': f1_score(y_true, y_pred, average='macro'),
+        'precision': precision_score(y_true, y_pred, average='macro'),
+        'recall': recall_score(y_true, y_pred, average='macro'),
+        'confusion_matrix': [y_true,y_pred]
+
+    }
+
+
+
 
 
 def biraj_bazu() -> FileChooser:
